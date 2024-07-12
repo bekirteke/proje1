@@ -9,7 +9,7 @@ async function getCategories() {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMGFhZDViZWQ0ZGIxY2NiMzBhMjg0ODJkNzZkY2RiNyIsIm5iZiI6MTcyMDc5NDg2OS4wNTEyNiwic3ViIjoiNjY5MTNlYTNiMGNkODM2NDFiMjNhMDZkIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.msmUkyJIPP4r0uN28_uOVLspSClpYQokbg5Ngsaz7gg'
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`
       }
     };
   
