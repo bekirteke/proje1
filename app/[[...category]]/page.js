@@ -2,13 +2,9 @@ import React from "react";
 import HomeContainer from "@/containers/home";
 import Movies from "@/mocks/movies.json";
 
-async function delay(ms){
-    return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 async function Home({ params }) {
-    await delay(2000);
-
+    
     let selectedCategory;
 
     if (params.category?.length > 0) {
