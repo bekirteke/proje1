@@ -7,7 +7,7 @@ import { FeaturedMovie } from '@/components/featured-movie';
 import { Categories } from '@/components/categories';
 import { MoviesSection } from '@/components/movies-section';
 
-function HomeContainer({ selectedCategory, categories=[] }) {
+function HomeContainer({ selectedCategory, categories=[], topRated=[], popular=[] }) {
   const genre = Genres.genres.find((genre) => `${genre.id}` === selectedCategory.id);
 
   return (
@@ -24,11 +24,11 @@ function HomeContainer({ selectedCategory, categories=[] }) {
 
       <MoviesSection 
         title="Popular Films" 
-        movies={Movies.results.slice(1, 7)} 
+        movies={topRated.slice(1, 7)} 
       />
       <MoviesSection 
         title="Your Favorites" 
-        movies={Movies.results.slice(7, 13)} 
+        movies={popular.slice(7, 13)} 
       />
     </div>
   );
