@@ -1,18 +1,16 @@
 import React from 'react';
 
-import Movies from "@/mocks/movies.json";
-import Genres from "@/mocks/genres.json";
 
 import { FeaturedMovie } from '@/components/featured-movie';
 import { Categories } from '@/components/categories';
 import { MoviesSection } from '@/components/movies-section';
 
 function HomeContainer({ selectedCategory, categories=[], topRated=[], popular=[] }) {
-  const genre = Genres.genres.find((genre) => `${genre.id}` === selectedCategory.id);
+  const genre = categories.find((genre) => `${genre.id}` === selectedCategory.id);
 
   return (
     <div>
-      <FeaturedMovie movie={Movies.results[0]} />
+      <FeaturedMovie movie={topRated?.[0]} />
       <Categories categories={categories.slice(0, 5)} />
 
       {selectedCategory.movies.length > 0 && genre && (

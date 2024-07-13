@@ -1,6 +1,6 @@
 import React from "react";
 import HomeContainer from "@/containers/home";
-import Movies from "@/mocks/movies.json";
+
 
 
 async function getCategories() {
