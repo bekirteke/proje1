@@ -2,24 +2,10 @@ import React from 'react'
 import { MovieContainer } from '@/containers/movie'
 import { notFound } from 'next/navigation';
 
+import { fetchMovieApi } from '@/services/movie';
+
 const getMovie = async (movieId) => {
-    const url = `https://api.themoviedb.org/3/movie/${movieId}`;
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`
-      }
-    };
-  
-    try {
-      const res = await fetch(url, options);
-      const json = await res.json();
-      return json;
-    } catch (err) {
-      console.error('error:' + err);
-      return null;
-    }
+  return fetchMovieApi(`https://api.themoviedb.org/3/movie/${movieId}`);
   }
 
 
