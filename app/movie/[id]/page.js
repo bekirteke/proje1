@@ -2,11 +2,9 @@ import React from 'react'
 import { MovieContainer } from '@/containers/movie'
 import { notFound } from 'next/navigation';
 
-import { fetchMovieApi } from '@/services/movie';
+import { getMovie } from '@/services/movie';
 
-const getMovie = async (movieId) => {
-  return fetchMovieApi(`https://api.themoviedb.org/3/movie/${movieId}`);
-  }
+
 
 
 async function MoviePage( {params, searchParams}) {

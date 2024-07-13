@@ -1,24 +1,8 @@
 import React from "react";
 import HomeContainer from "@/containers/home";
 
-import { fetchMovieApi } from "@/services/movie";
+import { getCategories, getPopular, getSingleCategory, getTopRated } from "@/services/movie";
 
-async function getCategories() {
-    return fetchMovieApi('https://api.themoviedb.org/3/genre/movie/list');
-  }
-
-  async function getTopRated() {
-    return fetchMovieApi('https://api.themoviedb.org/3/movie/top_rated');
-
-  }
-
-  async function getPopular() {
-    return fetchMovieApi('https://api.themoviedb.org/3/movie/popular');
-  }
-
-  const getSingleCategory = async(genreId) =>{
-    return fetchMovieApi(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genreId}`);
-  }
 
 
 async function Home({ params }) {
